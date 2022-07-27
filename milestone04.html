@@ -1,0 +1,78 @@
+<html>
+<head>
+<style>
+
+ul.a {
+  list-style-type: circle;
+}
+</style>
+</head>
+<body style="background-color:red;">
+<h1>LIST OF COURCES AVAILABLE IN THE TRAINING CENTER</h1>
+<h2>orderd list after sorting:</h2>
+<button onclick="sortList()">Sort</button>
+
+<ol id="id01">
+<li>custamized trainings</li>
+<li>Student Based Approach</li>
+<li>Drive The Right Behaviour</li>
+</ol>
+<script>
+function sortList() {
+  var list, i, switching, b, shouldSwitch;
+  list = document.getElementById("id01");
+  switching = true;
+  
+  while (switching) {
+    
+    switching = false;
+    b = list.getElementsByTagName("LI");
+    
+    for (i = 0; i < (b.length - 1); i++) {
+      
+      shouldSwitch = false;
+      
+      if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
+        
+        shouldSwitch = true;
+        break;
+      }
+    }
+    if (shouldSwitch) {
+      b[i].parentNode.insertBefore(b[i + 1], b[i]);
+      switching = true;
+    }
+  }
+}
+
+</script>
+<h2>reversing an  sorted list</h2>
+
+<ol reversed>
+<li>custamized trainings</li>
+<li>Student Based Approach</li>
+<li>Drive The Right Behaviour</li>
+</ol>
+
+<h2>unorderd list</h2>
+  <ul class="a">
+<li>Life course</li>
+<li>Life Skills And Trainings</li>
+<li>Industry Linked Programs</li>
+</ul>
+<h2>orderd list(starting from 7)</h2>
+<ol start=7>
+<li>Identify gaps</li>
+<li>Goal-oriented Modules</li>
+<li>Continous engagement</li>
+</ol>
+<h2>defnition list(dl)</h2>
+<dl>
+<dt>1.talentio.io</dt>
+<dd>contains about talentio</dd>
+<dt>2.life cource</dt>
+<dd>about communication</dd>
+</dl>
+
+</body>
+</html>
